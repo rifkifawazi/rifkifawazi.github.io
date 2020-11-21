@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+.jumbotron {
+    font-size: 25px;
+    padding: 120px 60px;
+    background-color: rgb(110, 233, 110);
+    text-align: center;
+    color: white;
+}
+
+h2,
+h3 {
+    color: rgb(110, 233, 110);
+}
+
+.navbar {
+    background-color: rgb(83, 236, 83);
+    color: #fff;
+    border-bottom: 1px solid rgba(201, 197, 197, 0.2);
+    width: 100%;
+    padding: 0;
+    height: 80px;
+    line-height: 40px;
+    font-size: 18px;
+    padding: 0 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.navbar a.navbar-brand {
+    float: left;
+    height: inherit;
+    line-height: inherit;
+    padding: 20px 30px;
+    font-size: 22px;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.navbar a.navbar-brand span {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.navbar ul {
+    float: right;
+    list-style: none;
+    height: inherit;
+    line-height: inherit;
+    top: -20pxS;
+}
+
+.navbar ul li {
+    display: inline-block;
+    margin-top: -10;
+
+}
+
+.navbar ul li a {
+    display: block;
+    text-align: center;
+    min-width: 120px;
+}
+
+.navbar ul li a:hover {
+    font-weight: 900;
+}
+
+.navbar .navbar-toggler {
+    display: none;
+}
+
+main {
+    padding: 25px;
+    overflow: auto;
+}
+
+#content {
+    float: left;
+    width: 70%;
+}
+
+footer {
+    padding: 20px;
+    color: white;
+    background-color: rgb(110, 233, 110);
+    text-align: center;
+    font-weight: bold;
+}
+
+.featured-image {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    object-position: initial;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.profile img {
+    width: 200px;
+}
+
+
+aside {
+    float: right;
+    width: 30%;
+    padding-left: 20px;
+    padding-top: 30px;
+}
+
+.bogor-info {
+    margin: 17px auto;
+    text-align: center;
+}
+
+.bogor-info img {
+    height: 250px;
+    text-align: center;
+    border-radius: 50%;
+    border: lightgreen solid 5px;
+    margin: 20px;
+}
+
+.bogor-info img:hover {
+    transform: scale(.98);
+}
+
+table {
+    text-align: justify;
+    margin: 5px auto;
+    padding: 10px;
+
+}
+
+.border {
+    max-width: 100px;
+    height: 5px;
+    background: rgb(65, 226, 65);
+    margin: 10px auto;
+}
+
+.myprofil {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.myprofil ul {
+    margin: 20px;
+    text-align: center;
+}
+
+.myprofil img {
+    background: lightgreen;
+    border-radius: 10%;
+    padding: 5px;
+    height: 170px;
+    margin: 20px;
+    text-shadow: 1px 2px #000;
+}
+
+.myprofil img:hover {
+    transform: scale(.98);
+}
+
+.lower-container li {
+    font-size: 16px;
+    color: gray;
+    text-align: center;
+    list-style-type: none;
+}
+
+@media screen and (max-width: 1000px) {
+
+    #content,
+    aside {
+        width: 100%;
+        padding: 0;
+        margin-bottom: 20px;
+    }
+
+    .jumbotron {
+        padding: 70px 60px;
+    }
+}
+
+@media (max-width: 991px) {
+    .navbar ul {
+        padding: 0 10px;
+    }
+
+    .navbar ul li a {
+        min-width: 100px;
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 767px) {
+    .navbar {
+        padding: 0;
+    }
+
+    .navbar ul {
+        width: 100%;
+        padding: 0;
+        margin-top: -10px;
+        background-color: rgba(0, 0, 0, 0.9);
+        /* height: auto; */
+        height: 100vh;
+        max-height: 0;
+        line-height: 80px;
+        overflow: hidden;
+        transition: all ease-in-out 0.3s;
+    }
+
+    .navbar ul.open {
+        max-height: 100vh;
+    }
+
+    .navbar ul li {
+        width: 100%;
+    }
+
+    .navbar ul li a {
+        padding: 0;
+    }
+
+    .navbar .navbar-toggler {
+        display: block;
+        position: absolute;
+        height: 40px;
+        top: 20px;
+        right: 20px;
+        background-color: transparent;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        outline: none;
+        padding: 0 5px;
+        cursor: pointer;
+    }
+
+    .navbar .navbar-toggler span,
+    .navbar .navbar-toggler span::before,
+    .navbar .navbar-toggler span::after {
+        display: block;
+        content: '';
+        background-color: #fff;
+        height: 3px;
+        width: 28px;
+        border-radius: 4px;
+        transition: all ease-in-out 0.3s;
+    }
+
+    .navbar .navbar-toggler span::before {
+        transform: translateY(-8px);
+    }
+
+    .navbar .navbar-toggler span::after {
+        transform: translateY(5px);
+    }
+
+    .navbar .navbar-toggler.open-navbar-toggler span {
+        background-color: transparent;
+    }
+
+    .navbar .navbar-toggler.open-navbar-toggler span::before {
+        transform: translateY(0px) rotate(45deg);
+    }
+
+    .navbar .navbar-toggler.open-navbar-toggler span::after {
+        transform: translateY(-3px) rotate(-45deg);
+    }
+}

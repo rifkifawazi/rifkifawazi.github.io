@@ -1,0 +1,333 @@
+/* font */
+
+@font-face {
+    font-family: BebasNeue;
+    src: url(../font/BebasNeue-Regular.woff) format('woff');
+}
+
+/* Style Utama */
+body {
+    font: 18px/36px 'BebasNeue', 'Arial Narrow', 'arial', sans-serif;
+    font-weight: normal;
+    background-color: #20202A;
+    line-height: 1;
+}
+
+
+h1 {
+    font-size: 40px;
+    margin: 50px -35px 10px 0;
+    text-align: center;
+    text-shadow: 4px 4px 10px #000;
+    color: #fff;
+}
+
+h2 {
+    font-family: 'BebasNeue', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    color: rgba(200, 200, 200, .5);
+
+}
+
+.judul {
+    width: 600px;
+    margin: auto;
+    padding: 30px 1px;
+}
+
+div.mata {
+    background: url(https://image.ibb.co/bJcErR/saringgan_1.png);
+    width: 70px;
+    height: 72px;
+    position: absolute;
+    top: 80px;
+    margin-left: 80px;
+    animation: saringgan 1.2s 1s infinite forwards;
+}
+
+div .mata:hover {
+    filter: saturate(200%);
+}
+
+.container {
+    width: 600px;
+    background-color: #1D1C25;
+    margin: auto;
+    padding: 30px 5px;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, .8);
+    border-radius: 5px 5px 0 0;
+}
+
+.credit {
+    width: 600px;
+    background-color: #1D1C25;
+    margin: 10px auto;
+    padding: 0 5px;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, .8);
+    border-radius: 0 0 5px 5px;
+}
+
+.credit p {
+    font-size: 10px;
+    padding: 10px;
+    color: rgba(200, 200, 200, .5);
+    font-family: arial, sans-serif;
+    font-weight: 5px;
+}
+
+.gallery {
+    margin: auto;
+    margin-left: 30px;
+}
+
+.gallery li {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    /* border: 5px solid #666; */
+    float: left;
+    margin-right: 20px;
+    position: relative;
+    box-shadow: 2px 2px 5px rgb(0, 0, 0, .9);
+}
+
+.clear {
+    clear: both;
+}
+
+.gallery li,
+.gallery li a img,
+.gallery li span {
+    border-radius: 10%;
+}
+
+.gallery li span {
+    position: absolute;
+    display: block;
+    width: 120px;
+    height: 120px;
+    background-color: rgba(0, 0, 0, .15);
+    top: 0;
+    text-align: center;
+    line-height: 120px;
+    font-size: 20px;
+    color: #fff;
+    text-shadow: 1px 1px #000;
+    opacity: 0;
+    transition: .5s;
+    z-index: 9999;
+}
+
+.gallery li a:hover span {
+    opacity: 1;
+    transform: scale(.99);
+}
+
+.gallery a img {
+    transition: .1s;
+}
+
+.gallery li a:hover img {
+    transform: scale(.98);
+}
+
+
+/* overlay */
+.overlay {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0);
+    z-index: 9999;
+    transition: .5s;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.overlay:target {
+    width: auto;
+    height: auto;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(3, 3, 3, .7);
+}
+
+.overlay img {
+    max-height: 100%;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, .5);
+}
+
+.overlay:target img {
+    animation: fadeAjah 1s;
+}
+
+.overlay .close {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    margin-left: -40px;
+    line-height: 14px;
+    color: white;
+    text-decoration: none;
+    background-color: #870101;
+    border-radius: 5px;
+    line-height: 14px;
+    padding: 8px 15px;
+    opacity: 0;
+}
+
+.overlay .close:hover {
+    background-color: #CD1515;
+}
+
+.overlay:target .close {
+    animation: SlideDownFade .5s .5s forwards;
+}
+
+/* Navigasi */
+.next,
+.prev {
+    width: 57px;
+    height: 93px;
+    background: url(https://image.ibb.co/cmACd6/prev.png);
+    position: absolute;
+    text-indent: -9999px;
+    top: 40%;
+    margin-left: 45px;
+    opacity: 0;
+}
+
+.prev {
+    background-image: url(https://image.ibb.co/m9aZrR/next.png);
+    margin-left: -100px;
+}
+
+
+.overlay:target .next,
+.overlay:target .prev {
+    animation: fadeAjah .5s .5s forwards;
+}
+
+.prev:hover {
+    background: url(https://image.ibb.co/iAM7BR/nexthover.png);
+    margin-left: -100px;
+}
+
+.next:hover {
+    background: url(https://image.ibb.co/g2LZrR/prevhover.png);
+    background-repeat: no-repeat;
+}
+
+/* animasi */
+@keyframes fadeAjah {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes zoomDanFade {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes SlideDownFade {
+    0% {
+        opacity: 0;
+        margin-top: -20px;
+    }
+
+    100% {
+        opacity: 1;
+        margin-top: 0;
+    }
+}
+
+@keyframes saringgan {
+    0% {
+        transform: rotate(0deg);
+        background: url(https://image.ibb.co/bJcErR/saringgan_1.png);
+    }
+
+    100% {
+        transform: rotate(360deg);
+        background: url(https://image.ibb.co/nEFOkm/saringgan_2.png);
+
+    }
+}
+
+@media screen and (max-width: 767px) {
+
+    .judul {
+        margin-left: -80px;
+        margin-top: -40px;
+    }
+
+    .judul h1{
+        font-size: 35px;
+        margin-left: 5px;
+        margin-top: 45px;
+
+    }
+
+    .judul h2 {
+        font-size: 15px;
+        margin-left: -20px;
+    }
+
+    div.mata {
+        margin-top: -50px;
+        margin-left: 100px;
+    }
+
+    .credit {
+        max-width: ;width: 390px;
+    }
+
+    .gallery {
+        margin: auto;
+        margin-left: -0px;
+    }
+
+    .overlay img {
+        max-height: 30%;
+        margin-left: -200px;
+        box-shadow: 3px 3px 6px rgba(0, 0, 0, .5);
+    }
+
+    .overlay .close {
+        margin-left: -130px;
+    }
+
+    .next,
+    .prev {
+        width: 57px;
+        height: 93px;
+        background: url(https://image.ibb.co/cmACd6/prev.png);
+        position: absolute;
+        text-indent: -9999px;
+        top: 36%;
+        margin-left: -80px;
+        opacity: 0;
+    }
+
+    .prev {
+        background-image: url(https://image.ibb.co/m9aZrR/next.png);
+        margin-left: -190px;
+    }
+
+}
